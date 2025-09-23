@@ -1,0 +1,64 @@
+Important questions
+Ques1. Some systems automatically delete all user files when a user logs off or a job terminates, unless the user explicitly requests that they be kept; other systems keep all files unless the user explicitly deletes them. Discuss the relative merits of each approach.
+Ans:Auto Delete on Logout/Job Termination
+Advantages:
+1.Efficient resource management: It prevents disk Space from being cluttered with old or forgotten files, keeping the system Clean and efficient. It's useful for a system with limited Storage. It removes temporarily or unused files automatically.
+2.Enhanced security:- It ensures that no sensitive or temporary data is left behind after a session, which is a major benefit in shared or public Computing environments. There are no leftover files for other users to access.
+3.Controlled environment: It enforces a predictable and controlled State. It prevents clustering in the shared System.
+keep-all-files by default
+Advantages:
+1. User convenience: It allows users to save their work effortlessly and keeps their Files in Storage, which aligns with how most people work and think.
+2. Prevent Accidental data loss: It reduces the risk of accidental data loss, as files are not deleted by default. This is critical for personal computers and professional environments.
+3. Flexibility: It allows user to decide what to keep and what to delete, giving them full control over their personal storage space.
+Ques2. Why do some systems keep track of the type of a file, while others leave it to the user, and others simply do not implement multiple file types? Which system is “better"?
+Ans: Systems that keep track of the file which is managed by operating system. Here, file metadata stores types (e.g. "image/jpeg", "application/pdf").
+Advantages:
+1.It is more user friendly and operating system use known apps to open these type of files.
+2.It avoids dependence on file name extension.
+3.It improves security that prevents in exection of wrong type.
+Disadvantages:
+1.It is more complex in implementaion.
+2.It is less flexible and users cannot easily overwrite type if it detected wrong.
+For example: Macos
+Systems that leave file type to the user which is extension-based. Operating system does not store type internally; file type inferred from extensions (e.g., .txt,.exe,.jpg).
+Advantages:
+1.It is flexible, user can rename and assign types.
+2.It is simpler for operating system to implement.
+Disadvantages:
+1.It lead to errors when you type wrong extension.
+2.It involved in security risk like (e.g., virus.exe renamed by virus.txt)
+For example: Windows
+Systems without multiple file type which is content-driven. Here, file saw as raw bytes and app decide interpretation.
+Advantages:
+1.It is very simple and uniform design.
+2.It has maximum flexibility, any program can read or write any file.
+Disadvantages:
+1.It is less user-friendly, here user needs to know which app to use.
+2.The application must include their own logic to interpret file contents.
+For example: Unix, Linux
+Conclusion: No, choice for better, It depends on design goals: 
+1.Better for end-users and operating system managed file types.
+2.Better for developer and flexibility to everything is byte.
+3.Compromise: Here many modern operating system use extension and metadata for windows and linux desktops.
+Ques3. Similarly, some systems support many types of structures for a file’s data, while others simply support a stream of bytes. What are the advantages and disadvantages of each approach?
+Ans: Structured files (many types supported by operating system), file data organized into records, entries, trees or objects.
+Advantages:
+1.Convenient for apps in context of database systems and logs transactions.
+2.Efficient random access that operating system can directly locate records.
+3.Less work for programmer which structure managed by operating system.
+Disadvantages:
+1.Less flexible where apps must confirms to operating system supported structure.
+2.Portability issues where file may not work on other operating system.
+3.Increased operating system complexity.
+Unstructured files (Stream on bytes), file is just a sequence of bytes and applications interpret structure (text,image,database). It follows unix or linux.
+Advantages:
+1.Simple operating system design where all files treated the same way.
+2.It is highly flexible means any program can define its own format.
+3.Portable across system that defines operating system does not enforce structure.
+Disadvantages:
+1.Application overhead that means apps must handle structure themselves.
+2.It is less efficient for structured access.
+
+
+
+
